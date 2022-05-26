@@ -1,0 +1,13 @@
+{
+    "name": "Places",
+    "alias": "places",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Places\\Providers\\PlacesServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": ["morphling"]
+}
