@@ -17,7 +17,7 @@ class StateResource extends JsonResource
         return [
             'id' => $this->id,
             'country_id' => $this->country_id,
-            'country' => $this->whenLoaded('country', fn() => new CountryResource($this->country)),
+            'country' => $this->whenLoaded('country', fn () => new CountryResource($this->country)),
             'name' => $this->name,
             'code' => $this->code,
         ];

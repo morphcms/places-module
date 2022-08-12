@@ -12,8 +12,8 @@ class DeleteController extends Controller
     {
         // TODO: Authorize address deletion
 
-       $address->delete();
+        $address->delete();
 
-       return new JsonResponse();
+        return new JsonResponse();
     }
 }

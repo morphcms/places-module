@@ -14,25 +14,25 @@ class UpdateController extends Controller
     {
         $address->update($request->validated());
 
-        if ($address->shipping_default){
+        if ($address->shipping_default) {
             Address::query()->whereNot('id', $address->id)->update(['shipping_default' => false]);
         }
 
-        if ($address->billing_default){
+        if ($address->billing_default) {
             Address::query()->whereNot('id', $address->id)->update(['billing_default' => false]);
         }
 
-       if($address->shipping_default && $address->billing_default) {
-           Address::query()->whereNot('id', $address->id)->update(['shipping_default' => false, 'billing_default' => false]);
-       } else {
-           if ($address->shipping_default){
-               Address::query()->whereNot('id', $address->id)->update(['shipping_default' => false]);
-           }
+        if ($address->shipping_default && $address->billing_default) {
+            Address::query()->whereNot('id', $address->id)->update(['shipping_default' => false, 'billing_default' => false]);
+        } else {
+            if ($address->shipping_default) {
+                Address::query()->whereNot('id', $address->id)->update(['shipping_default' => false]);
+            }
 
-           if ($address->billing_default){
-               Address::query()->whereNot('id', $address->id)->update(['billing_default' => false]);
-           }
-       }
+            if ($address->billing_default) {
+                Address::query()->whereNot('id', $address->id)->update(['billing_default' => false]);
+            }
+        }
 
         return new JsonResponse(['address' => new AddressResource($address)]);
     }

@@ -4,7 +4,6 @@ namespace Modules\Places\Utils;
 
 class Table
 {
-
     public static function countries(): string
     {
         return static::prefix('countries');
@@ -22,6 +21,6 @@ class Table
 
     protected static function prefix(string $table): string
     {
-        return config('places.table_prefix', '') . $table;
+        return config('places.table_prefix', '').$table;
     }
 }

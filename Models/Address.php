@@ -44,7 +44,7 @@ class Address extends Model
     public function title(): Attribute
     {
         return new Attribute(
-            get: fn() => $this->line_one,
+            get: fn () => $this->line_one,
         );
     }
 
@@ -57,7 +57,7 @@ class Address extends Model
         ];
 
         return new Attribute(
-            get: fn() => collect($addressFormat)->join(', '),
+            get: fn () => collect($addressFormat)->join(', '),
         );
     }
 }

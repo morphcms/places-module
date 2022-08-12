@@ -3,7 +3,6 @@
 namespace Modules\Places\Nova\Resources;
 
 use App\Nova\Resource;
-use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
@@ -31,5 +30,4 @@ class State extends Resource
             Text::make('Code')->required(),
         ];
     }
-
 }

@@ -3,7 +3,6 @@
 namespace Modules\Places\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use JetBrains\PhpStorm\ArrayShape;
 use Laravel\Scout\Searchable;
@@ -25,7 +24,7 @@ class State extends Model
         return $this->belongsTo(Country::class);
     }
 
-    #[ArrayShape(['name' => "string", 'code' => "string"])]
+    #[ArrayShape(['name' => 'string', 'code' => 'string'])]
     public function toSearchableArray(): array
     {
         return [

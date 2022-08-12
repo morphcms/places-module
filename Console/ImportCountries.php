@@ -2,14 +2,12 @@
 
 namespace Modules\Places\Console;
 
+use function collect;
 use DB;
 use Http;
 use Illuminate\Console\Command;
 use Laravel\Scout\EngineManager;
-use Modules\Places\Models\Address;
 use Modules\Places\Models\Country;
-use Modules\Places\Models\State;
-use function collect;
 
 class ImportCountries extends Command
 {
@@ -45,9 +43,9 @@ class ImportCountries extends Command
             ->object();
 
         $newCountries = collect($countries)
-            ->filter(fn($country) => !$existing->contains($country->iso3));
+            ->filter(fn ($country) => ! $existing->contains($country->iso3));
 
-        if (!$newCountries->count()) {
+        if (! $newCountries->count()) {
             $this->info('There are no new countries to import');
 
             return static::SUCCESS;
@@ -82,5 +80,4 @@ class ImportCountries extends Command
 
         return static::SUCCESS;
     }
-
 }

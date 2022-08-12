@@ -17,7 +17,7 @@ class SearchController extends Controller
     {
         $validated = $request->validate([
             'query' => ['nullable', 'string'],
-            'country' => ['sometimes', Rule::exists(Table::countries(), 'id')]
+            'country' => ['sometimes', Rule::exists(Table::countries(), 'id')],
         ]);
 
         $country = $validated['country'] ?? null;
@@ -27,7 +27,6 @@ class SearchController extends Controller
                 $query->where('country_id', $country);
             }
         })->get();
-
 
         return new JsonResponse(StateResource::collection($countries));
     }

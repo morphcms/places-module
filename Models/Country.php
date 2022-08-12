@@ -28,7 +28,6 @@ class Country extends Model
         return $this->hasMany(Address::class);
     }
 
-
     public function toSearchableArray()
     {
         return [

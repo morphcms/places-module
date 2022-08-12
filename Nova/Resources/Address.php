@@ -2,10 +2,8 @@
 
 namespace Modules\Places\Nova\Resources;
 
-
 use App\Nova\Resource;
 use App\Nova\User;
-use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
@@ -24,11 +22,9 @@ class Address extends Resource
 
     public static $displayInNavigation = false;
 
-
     public static $search = [
         'line_one', 'city', 'postcode', 'email', 'phone',
     ];
-
 
     public function fields(NovaRequest $request): array
     {
@@ -61,7 +57,7 @@ class Address extends Resource
 
             Panel::make('Other', [
                 KeyValue::make('Meta')->nullable(),
-            ])
+            ]),
         ];
     }
 }

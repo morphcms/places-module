@@ -16,9 +16,7 @@ class SearchController extends Controller
             'query' => ['nullable', 'string'],
         ]);
 
-
         $countries = Country::search($validated['query'] ?? '')->get();
-
 
         return new JsonResponse(CountryResource::collection($countries));
     }

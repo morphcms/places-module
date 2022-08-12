@@ -9,6 +9,7 @@ use Modules\Places\Models\Address;
 
 /**
  * @mixin Model
+ *
  * @property-read Collection $addresses
  */
 trait HasAddresses

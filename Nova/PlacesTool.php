@@ -26,9 +26,9 @@ class PlacesTool extends Tool
     public function menu(Request $request)
     {
         return MenuSection::make('Places', [
-            MenuItem::resource(Address::class)->canSee(fn() => true),
-            MenuItem::resource(Country::class)->canSee(fn() => true),
-            MenuItem::resource(State::class)->canSee(fn() => true),
+            MenuItem::resource(Address::class)->canSee(fn () => true),
+            MenuItem::resource(Country::class)->canSee(fn () => true),
+            MenuItem::resource(State::class)->canSee(fn () => true),
         ])->icon('location-marker')->collapsable();
     }
 }

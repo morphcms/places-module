@@ -4,12 +4,9 @@ namespace Modules\Places\Console;
 
 use Illuminate\Console\Command;
 use Laravel\Scout\EngineManager;
-use MeiliSearch\Exceptions\ApiException;
 use Modules\Places\Models\Address;
 use Modules\Places\Models\Country;
 use Modules\Places\Models\State;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Input\InputArgument;
 
 class IndexPlaces extends Command
 {
@@ -53,7 +50,7 @@ class IndexPlaces extends Command
         ];
 
         // Make sure we have the relevant indexes ready to go.
-        foreach ($searchables as $searchable){
+        foreach ($searchables as $searchable) {
             $this->call('scout:import', ['model' => $searchable]);
         }
 
